@@ -1,5 +1,5 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/Service/Service.class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/Service/Service.class.php');
 
   {
   //

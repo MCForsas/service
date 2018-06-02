@@ -5,7 +5,7 @@
 class Database{
   private $database;
   function __construct(){ //Connects to database
-    require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/Configuration/Globals.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/Configuration/Globals.php');
     $this->database = new PDO(
       'mysql:host='.DATABASE_HOST.
       ';dbname='.DATABASE_NAME,
@@ -16,7 +16,7 @@ class Database{
   }
 
   function executeQuery($query,$arguments){ //executes secure query
-    require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/Database/SecureInput.class.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/Database/SecureInput.class.php');
     $execution = $this->database->prepare($query);
     $secureText = new SecureInput();
     foreach ($arguments as $key => $value) { //binds values

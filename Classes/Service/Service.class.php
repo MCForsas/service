@@ -6,12 +6,12 @@ class Service{
   protected $database;
   private $serviceData;
   function __construct(){
-    require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/Database/Database.class.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/Database/Database.class.php');
     $this->database = new Database();
   }
   //
   public function addNewService($email,$title,$description,$price,$category,$coordinates){
-    require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/User/User.class.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/User/User.class.php');
     $user = new User();
     if(!$user->checkIfUserEmailExists($email)){
       die('Error006');

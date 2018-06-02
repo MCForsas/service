@@ -15,7 +15,7 @@
     $isError = true;
   }else{
     $isError = false;
-    require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/User/AddUser.class.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/User/AddUser.class.php');
 
     $formUserName = $_POST['username'];
     $formUserEmail = $_POST['userEmail'];

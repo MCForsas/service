@@ -2,7 +2,7 @@
 /*
   Class used to connect to send emails
 */
-require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/Configuration/Globals.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/Configuration/Globals.php');
   class SendEmail{
     public function sendSignupConfirmationEmail($userEmail,$hash,$userName){
       error_reporting( E_ALL );

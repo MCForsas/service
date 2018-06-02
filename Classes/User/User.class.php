@@ -5,7 +5,7 @@
 class User{
   protected $database;
   function __construct(){
-    require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/Database/Database.class.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/Database/Database.class.php');
     $this->database = new Database();
   }
   public function addNewUser($userUserName,$userEmail,$userPassword){
@@ -26,7 +26,7 @@ class User{
     if($result){
       return false;
     }else{
-      require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/Email/SendEmail.class.php');
+      require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/Email/SendEmail.class.php');
       $email = new SendEmail;
       if($email->sendSignupConfirmationEmail($values[':email'],$values[':hash'],$values[':username'])){
         return true;

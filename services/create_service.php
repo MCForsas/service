@@ -92,7 +92,7 @@ if(!isset($_POST['submit'])){
   }
   if(!$isError){
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/e/Classes/Service/AddService.class.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/service/Classes/Service/AddService.class.php');
     $service = new Service();
     $serviceResult = $service->addNewService($_SESSION['email'],$formTitle,$formDescription,$formPrice,$formCategory,$formCoordinates);
     if($serviceResult != false){
