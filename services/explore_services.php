@@ -24,14 +24,17 @@
 
   //Create new array of $services
   $listSize = 10;
-  $services = array();
+  $services = new Service();
+  $location = $services->searchServiceByLocation(/*"({$lat},{$lng})"*/"(45,45)",100000,10);
+  //$services->getData($location);
 
-  for($i = 0; $i < $listSize; $i++) {
+  /*for($i = 0; $i < $listSize; $i++) {
     $services[$i] = new Service();
     $location = $services[$i]->searchServiceByLocation("({$lat},{$lng})",10,1);
     $services[$i]->getData($location);
     echo($services[$i]->getTitle().'</br>');
-  }
+  }*/
+
 
   //echo($services[0]->getTitle());
 ?>
