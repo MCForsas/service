@@ -84,7 +84,7 @@ class Service{
       * cos( radians( lng ) - radians(:longtitude) ) + sin( radians(:latitude) ) * sin(radians(lat)) ) ) AS distance
       FROM services
       HAVING distance < :desiredDistance
-      ORDER BY distance LIMIT :amount';
+      ORDER BY distance LIMIT '.intval($amount);
 
       $lat = $this->getSubstringBetween($coordinates,'(',',');
       $lng = $this->getSubstringBetween($coordinates,',',')');
@@ -92,13 +92,13 @@ class Service{
     $values =  array(
       ':latitude' => $lat,
       ':longtitude' => $lng,
-      ':desiredDistance' => $distance,
-      ':amount' => $amount
+      ':desiredDistance' => $distance
     );
+
 
     $result = $this->database->executeQuery($query,$values);
     if(!empty($result)){
-      return $result['code'];
+      return $result;//['code'];
     }else{
       die('error 004');
     }

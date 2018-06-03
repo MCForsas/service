@@ -25,13 +25,13 @@ class Database{
         die('Error 000');
       }
     }
-    $execution->debugDumpParams();
+    //$execution->debugDumpParams();
     echo('</br>');
     if(!$execution->execute()){
       print_r($execution->errorInfo());
       die('</br>Error 001');
     }else{
-      $result = $execution->fetch(PDO::FETCH_ASSOC);
+      $result = $execution->fetchAll();
       return $result;
     }
   }
